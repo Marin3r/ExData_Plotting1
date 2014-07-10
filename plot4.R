@@ -1,14 +1,14 @@
 ####Loading data4
 
-
-Daten <- read.csv("household_power_consumption.txt", header = T, sep = ";")
+file <- "exdata-data-household_power_consumption/household_power_consumption.txt"
+Daten <- read.table(file, header = T, sep = ";",colClasses = c(rep("character", 2), rep("numeric", 7)), na.strings = "?")
 DatenPlot <- subset(Daten, Daten$Date == "1/2/2007" | Daten$Date == "2/2/2007")
+rm(list=setdiff(ls(),c("DatenPlot")))
 Sys.setlocale(category = "LC_TIME", locale = "C")
-Sys.setlocale(category = "LC_ALL", locale = "")
 
 ### Plot 4
 
-png(filename="plot4.png", width = 480, height = 480 units = "px")
+png(filename="plot4.png", width = 480, height = 480, units = "px")
 par(mfrow = c(2, 2))
 plot(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Global_active_power), dec = ".")), type = "l", xlab = "", ylab = "Global Active Power")
 plot(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Voltage), dec = ".")), type = "l", xlab = "datetime", ylab = "Voltage")
