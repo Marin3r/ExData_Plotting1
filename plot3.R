@@ -7,7 +7,7 @@ rm(list=setdiff(ls(),c("DatenPlot")))
 Sys.setlocale(category = "LC_TIME", locale = "C")
 ### Plot 3
 
-png(filename="plot3.png", width = 480, height = 480, units = "px")
+png(filename="figure/plot3.png", width = 480, height = 480, units = "px")
 plot(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Sub_metering_1), dec = ".")), type = "l", xlab = "", ylab = "Energy sub metering", col = "black")
 points(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Sub_metering_2), dec = ".")), type = "l", xlab = "", ylab = "Energy sub metering", col = "red")
 points(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Sub_metering_3), dec = ".")), type = "l", xlab = "", ylab = "Energy sub metering", col = "blue")

@@ -7,10 +7,8 @@ Sys.setlocale(category = "LC_TIME", locale = "C")
 
 
 ### Plot 1
-png(filename="plot1.png", width = 480, height = 480, units = "px")
-<<<<<<< HEAD
-hist(DatenPlot$Global_active_power, xlab="Global Active Power (kilowatts)", col="red", main="Global Active Power")
-=======
-hist(as.numeric(Daten$Global_active_power), xlab="Global Active Power (kilowatts)", col="red", main="Global Active Power")
->>>>>>> e406f7d0d09473744fc904cb2969f6f2171afbee
+png(filename="figure/plot1.png", width = 480, height = 480, units = "px")
+
+hist(as.numeric(DatenPlot$Global_active_power), xlab="Global Active Power (kilowatts)", col="red", main="Global Active Power")
+
 dev.off()

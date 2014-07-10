@@ -7,7 +7,7 @@ rm(list=setdiff(ls(),c("DatenPlot")))
 Sys.setlocale(category = "LC_TIME", locale = "C")
 
 ### Plot 2
-png(filename="plot2.png", width = 480, height = 480, units = "px")
+png(filename="figure/plot2.png", width = 480, height = 480, units = "px")
 DatenPlot$DateTime <- strptime(paste(DatenPlot$Date, DatenPlot$Time), "%d/%m/%Y %H:%M:%S")
 
 plot(DatenPlot$DateTime,as.numeric(type.convert(as.character(DatenPlot$Global_active_power), dec = ".")), type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
