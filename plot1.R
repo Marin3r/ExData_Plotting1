@@ -6,6 +6,6 @@ Sys.setlocale(category = "LC_TIME", locale = "C")
 Sys.setlocale(category = "LC_ALL", locale = "")
 
 ### Plot 1
-png(filename="plot1.png", width = 480, height = 480 units = "px")
+png(filename="plot1.png", width = 480, height = 480, units = "px")
 hist(as.numeric(Daten$Global_active_power), xlab="Global Active Power (kilowatts)", col="red", main="Global Active Power")
 dev.off()
